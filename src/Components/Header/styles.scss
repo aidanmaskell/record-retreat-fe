@@ -1,0 +1,11 @@
+@import '../../index.scss';
+
+.header {
+    background-color: $headerColor;
+    height: 10vh;
+    h1 {
+        color: $titleColor;
+        font-family: $titleFont;
+        font-size: 2.5rem;
+    }
+}
