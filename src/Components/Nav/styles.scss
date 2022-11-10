@@ -1,5 +1,13 @@
 @import '../../index.scss';
 
-nav {
-    
+.nav {
+    button {
+        background-color: $successColor;
+    }
+    .navLinks {
+        color: #000000; 
+        text-decoration: none;
+        font-family: $textFont;
+        font-weight: bold;
+    }
 }

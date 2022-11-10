@@ -9,7 +9,9 @@ import Shuffle from './Components/Shuffle';
 const App = () => {
   return (
     <>
-    <Header />
+    <div className='row'>
+      <Header />
+    </div>
     <div className='row page'>
       <BrowserRouter>
         <Routes>
