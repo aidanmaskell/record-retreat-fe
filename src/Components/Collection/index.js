@@ -1,8 +1,7 @@
+import NoRecords from "../NoRecords"
 import RecordPreview from "../RecordPreview"
 
 const Collection = ({ records }) => {
-
-    console.log(records)
 
     const displayRecordPreviews = (records) => {
         if(records && records.length > 0) {
@@ -12,7 +11,7 @@ const Collection = ({ records }) => {
                 </>
             )
         } else {
-            return <h2>hi</h2>
+            return <NoRecords />
         }
     }
 
