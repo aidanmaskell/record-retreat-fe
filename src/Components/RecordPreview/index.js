@@ -1,7 +1,8 @@
-const RecordPreview = () => {
+const RecordPreview = ({ record }) => {
+    console.log('hello')
     return (
         <>
-            <h2>record prev</h2>
+            <h2>{record.title}</h2>
         </>
     )
 }
