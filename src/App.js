@@ -1,24 +1,24 @@
-import { BrowserRouter, Routes, Route, Outlet, Link} from 'react-router-dom'
+import { BrowserRouter, Routes, Route} from 'react-router-dom'
 import './App.scss';
+import AddRecord from './Components/AddRecord';
 import Collection from './Components/Collection';
 import Header from './Components/Header';
-import Homepage from './Components/Homepage';
 import Nav from './Components/Nav';
 import Shuffle from './Components/Shuffle';
 
 const App = () => {
   return (
     <>
-    <div className='row'>
+    <div className='row m-0'>
       <Header />
     </div>
-    <div className='row page'>
+    <div className='row page m-0'>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Nav/>}>
-            <Route index element={<Homepage />} />
-            <Route path='collection' element={<Collection />} />
+            <Route index element={<Collection />} />
             <Route path='shuffle' element={<Shuffle />} />
+            <Route path='addrecord' element={<AddRecord />} />
           </Route>
         </Routes>
       </BrowserRouter>

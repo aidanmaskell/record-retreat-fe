@@ -1,6 +1,10 @@
 @import './index.scss';
 
+* {
+  box-sizing: border-box;
+}
+
 .page {
   background-color: $backgroundColor;
-  min-height: 88vh;
+  min-height: 90vh;
 }
