@@ -11,6 +11,7 @@ import Shuffle from './Components/Shuffle';
 const App = () => {
 
   const [records, setRecords] = useState(null)
+  const [showSong, setShowSong] = useState(false)
   
   const getRecords = () => {
     fetch('http://127.0.0.1:3000/collection')
@@ -33,7 +34,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Nav/>}>
-            <Route index element={<Collection records={records} />} />
+            <Route index element={<Collection records={records} showSong={showSong} setShowSong={setShowSong}/>} />
             <Route path='shuffle' element={<Shuffle />} />
             <Route path='addrecord' element={<AddRecord />} />
           </Route>
