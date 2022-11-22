@@ -18,9 +18,9 @@ const Collection = ({ records }) => {
     }
 
     return (
-        <>
+        <div className="row d-flex justify-content-center">
             {displayRecordPreviews(records)}
-        </>
+        </div>
     )
 }
 
