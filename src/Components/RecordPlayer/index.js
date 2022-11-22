@@ -1,11 +1,11 @@
 import ReactPlayer from "react-player"
 
-const RecordPlayer = ({ songLink }) => {
+const RecordPlayer = ({ songLink, showSong }) => {
     return (
         <>
             <ReactPlayer 
                 url={songLink}
-                volume={0.2}
+                volume={1}
                 width='90%'
                 />
         </>

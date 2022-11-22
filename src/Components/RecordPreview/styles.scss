@@ -4,4 +4,15 @@
     border: 2px solid black;
     background-color: $headerColor;
     border-radius: 20px;
+    h3 {
+        font-family: $textFont;
+        font-weight: bold;
+    }
+    h4 {
+        font-family: $textFont;
+        font-size: 1.2rem;
+    }
+    button {
+        background-color: $successColor;
+    }
 }
