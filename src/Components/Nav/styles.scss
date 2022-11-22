@@ -1,6 +1,7 @@
 @import '../../index.scss';
 
 .nav {
+    border: 2px solid black;
     button {
         background-color: $successColor;
     }
@@ -10,5 +11,6 @@
         font-family: $textFont;
         font-weight: bold;
         font-size: 1rem;
+        
     }
 }

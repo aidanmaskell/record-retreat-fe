@@ -4,9 +4,9 @@ import RecordPlayer from "../RecordPlayer"
 const RecordPreview = ({ record }) => {
 
     const displayRecord = (record) => {
-        return (<div className="col-10 col-md-4 recordPreview m-2">
-            <h3>{record.artist}</h3>
-            <h4>{record.title}</h4>
+        return (<div className="col-10 col-md-3 recordPreview m-2 p-2 d-flex flex-column align-items-center">
+            <h3 className='text-center'>{record.artist}</h3>
+            <h4 className='text-center'>{record.title}</h4>
             <RecordPlayer songLink={record.songLink}/>
         </div>)
     }

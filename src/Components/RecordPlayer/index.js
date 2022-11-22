@@ -6,7 +6,8 @@ const RecordPlayer = ({ songLink }) => {
             <ReactPlayer 
                 url={songLink}
                 volume={0.2}
-                width='100%' />
+                width='90%'
+                />
         </>
     )
 }
