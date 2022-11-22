@@ -16,10 +16,11 @@ const RecordPlayer = ({ songLink, showSong }) => {
   }
 
     return (
-        <Draggable handle=".handle">
+        <Draggable 
+            handle=".handle">
             <div className='player window'>
-                <div className='titlebar'>
-                    <button>hi</button>
+                <div className='titlebar handle'>
+                    
                 </div>
                 <ReactPlayer 
                     url={songLink}
