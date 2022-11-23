@@ -16,13 +16,17 @@ const RecordPlayer = ({ recordId, recordPlaying }) => {
         }
       }, [recordId])
 
+      const handleClick = () => {
+        setPlayerVisible('d-none')
+      }
+
     return (
         <Draggable 
             nodeRef={nodeRef}
             handle=".handle">
             <div className={playerVisible} ref={nodeRef}>
                 <div className='titlebar handle d-flex justify-content-start'>
-                    <button className=''>X</button>
+                    <button onClick={handleClick}>X</button>
                 </div>
                 <div className='player m-0 p-0'>
                     <ReactPlayer 
