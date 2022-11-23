@@ -2,6 +2,7 @@
 
 .nav {
     border: 2px solid black;
+    border-radius: 5px;
     button {
         background-color: $successColor;
     }
@@ -11,6 +12,5 @@
         font-family: $textFont;
         font-weight: bold;
         font-size: 1rem;
-        
     }
 }

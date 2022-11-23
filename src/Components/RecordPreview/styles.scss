@@ -10,10 +10,21 @@
     }
     h4 {
         font-family: $textFont;
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     button {
-        background-color: $successColor;
+        background-color: $headerColor;
         border-radius: 5px;
+    }
+    .likeDislike {
+        button {
+            width: 70px;
+        }
+        .like {
+            background-color: rgb(109, 207, 109);
+        }
+        .dislike {
+            background-color: $dangerColor;
+        }
     }
 }

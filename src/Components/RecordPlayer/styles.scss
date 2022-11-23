@@ -31,9 +31,8 @@
         cursor: default;
 
         button {
-            background-color: rgb(255, 0, 0);
-            color: $headerColor;
-            border-radius: 3px;
+            background-color: $dangerColor;
+            border-radius: 2px;
         }
     }
 }
