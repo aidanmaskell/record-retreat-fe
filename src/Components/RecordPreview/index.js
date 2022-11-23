@@ -25,8 +25,8 @@ const RecordPreview = ({ record, recordId, setRecordId, setRecordPlaying }) => {
             <h4 className='text-center'>{record.title} - {record.year}</h4>
             <button onClick={handleClick} id={record._id} className='m-1 play'>PLAY</button>
             <div className='likeDislike'>
-                <LikeButton />
-                <DislikeButton />
+                <LikeButton likeId={record._id} />
+                <DislikeButton dislikeId={record._id} />
             </div>
         </div>)
     }

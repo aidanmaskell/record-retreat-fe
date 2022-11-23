@@ -1,9 +1,29 @@
 import './styles.scss'
 
-const LikeButton = () => {
+const LikeButton = ({ likeId }) => {
+
+    // const likeRecord = (likeId) => {
+    //     fetch(`http://127.0.0.1:3000/collection/like/${likeId}`, {
+    //         method: 'PUT'
+    //     })
+    //     .then(data => data.json())
+    //     .then((response) => {
+    //         console.log(response)
+    //         if (response.success === true) {
+    //             console.log('hello')
+    //         }
+    //     })
+    // }
+
+    // const handleClick = (likeId) => {
+    //     likeRecord(likeId)
+    // }
+
     return (
         <>
-            <button className='m-1 like'>Like</button>
+            <button 
+                // onClick={handleClick(likeId)} 
+                id={likeId} className='m-1 like'>Like</button>
         </>
     )
 }
