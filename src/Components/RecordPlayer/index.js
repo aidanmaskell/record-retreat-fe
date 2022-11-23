@@ -1,32 +1,37 @@
 import './styles.scss'
 import ReactPlayer from "react-player"
 import Draggable from 'react-draggable'
-import { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
-const RecordPlayer = ({ songLink, showSong }) => {
+const RecordPlayer = ({ recordId, recordPlaying }) => {
 
-    const [recordPlaying, setRecordPlaying] = useState(null)
+    const nodeRef = React.useRef(null)
+    const [playerVisible, setPlayerVisible] = useState('player window')
 
-    const getRecordById = (songId) => {
-        fetch(`http://127.0.0.1:3000/collection/${songId}`)
-        .then(data => data.json())
-        .then((response) => {
-            console.log(response.data)
-    })
-  }
+    useEffect(() => {
+        if (recordId) {
+            setPlayerVisible('window')
+        } else {
+            setPlayerVisible('d-none')
+        }
+      }, [recordId])
 
     return (
         <Draggable 
+            nodeRef={nodeRef}
             handle=".handle">
-            <div className='player window'>
+            <div className={playerVisible} ref={nodeRef}>
                 <div className='titlebar handle'>
                     
                 </div>
-                <ReactPlayer 
-                    url={songLink}
-                    volume={1}
-                    width='90%'
-                    />
+                <div className='player m-0 p-0'>
+                    <ReactPlayer 
+                        url={recordPlaying}
+                        volume={1}
+                        width='100%'
+                        controls={true}
+                        />
+                </div>
             </div>
         </Draggable>
     )

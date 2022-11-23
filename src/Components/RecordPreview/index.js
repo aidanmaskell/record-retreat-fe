@@ -1,11 +1,20 @@
 import './styles.scss'
-import RecordPlayer from "../RecordPlayer"
 
-const RecordPreview = ({ record, showSong, setShowSong }) => {
+const RecordPreview = ({ record, recordId, setRecordId, setRecordPlaying }) => {
+
+    const getRecordById = (recordId) => {
+        if(recordId) {
+            fetch(`http://127.0.0.1:3000/collection/${recordId}`)
+            .then(data => data.json())
+            .then((response) => {
+                setRecordPlaying(response.data[0].songLink)
+            })
+        }
+    }
 
     const handleClick = (e) => {
-        setShowSong(e.target.id)
-        console.log(showSong)
+        setRecordId(e.target.id)
+        getRecordById(recordId)
     }
 
     const displayRecord = (record) => {

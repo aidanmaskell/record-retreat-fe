@@ -1,8 +1,12 @@
+import { useState } from "react"
 import NoRecords from "../NoRecords"
 import RecordPlayer from "../RecordPlayer"
 import RecordPreview from "../RecordPreview"
 
-const Collection = ({ records, showSong, setShowSong }) => {
+const Collection = ({ records }) => {
+
+    const [recordId, setRecordId] = useState(false)
+    const [recordPlaying, setRecordPlaying] = useState(null)
 
     const displayRecordPreviews = (records) => {
         if(records && records.length > 0) {
@@ -10,8 +14,9 @@ const Collection = ({ records, showSong, setShowSong }) => {
                         <RecordPreview 
                             record={record}
                             key={record._id} 
-                            showSong={showSong}
-                            setShowSong={setShowSong} />
+                            recordId={recordId}
+                            setRecordId={setRecordId}
+                            setRecordPlaying={setRecordPlaying} />
                     ))}
                 </>
             )
@@ -25,7 +30,9 @@ const Collection = ({ records, showSong, setShowSong }) => {
         <div className="row d-flex justify-content-center">
             {displayRecordPreviews(records)}
         </div>
-            <RecordPlayer showSong={showSong}/>
+            <RecordPlayer 
+                recordId={recordId}
+                recordPlaying={recordPlaying} />
         </>
 
     )
