@@ -1,3 +1,5 @@
+import DislikeButton from '../DislikeButton'
+import LikeButton from '../LikeButton'
 import './styles.scss'
 
 const RecordPreview = ({ record, recordId, setRecordId, setRecordPlaying }) => {
@@ -21,10 +23,10 @@ const RecordPreview = ({ record, recordId, setRecordId, setRecordPlaying }) => {
         return (<div className="col-10 col-md-3 recordPreview m-2 p-2 d-flex flex-column align-items-center">
             <h3 className='text-center'>{record.artist}</h3>
             <h4 className='text-center'>{record.title} - {record.year}</h4>
-            <button onClick={handleClick} id={record._id} className='m-1'>PLAY</button>
+            <button onClick={handleClick} id={record._id} className='m-1 play'>PLAY</button>
             <div className='likeDislike'>
-                <button className='m-1 like'>Like</button>
-                <button className='m-1 dislike'>Dislike</button>
+                <LikeButton />
+                <DislikeButton />
             </div>
         </div>)
     }
