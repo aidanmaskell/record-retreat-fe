@@ -1,3 +1,5 @@
+@import '../../index.scss';
+
 .window {
     position: absolute;
     resize: both;
@@ -14,18 +16,26 @@
     border: 2px solid black;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
+    
+    .titlebar {
+        background-color: $headerColor;
+        border-bottom: 2px solid black;
+        width: 100%;
+        height: 30px;
+        font-size: 1rem;
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        cursor: default;
+
+        button {
+            background-color: rgb(255, 0, 0);
+            color: $headerColor;
+            border-radius: 3px;
+        }
+    }
 }
 
-.titlebar {
-    background-color: #d579d5;
-    border-bottom: 2px solid black;
-    width: 100%;
-    height: 20px;
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    cursor: default;
-}
 

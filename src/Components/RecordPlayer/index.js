@@ -21,8 +21,8 @@ const RecordPlayer = ({ recordId, recordPlaying }) => {
             nodeRef={nodeRef}
             handle=".handle">
             <div className={playerVisible} ref={nodeRef}>
-                <div className='titlebar handle'>
-                    
+                <div className='titlebar handle d-flex justify-content-start'>
+                    <button className=''>X</button>
                 </div>
                 <div className='player m-0 p-0'>
                     <ReactPlayer 
