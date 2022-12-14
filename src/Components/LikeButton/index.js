@@ -2,28 +2,25 @@ import './styles.scss'
 
 const LikeButton = ({ likeId }) => {
 
-    const likeRecord = (likeId) => {
+    const likeRecord = () => {
         fetch(`http://127.0.0.1:3000/collection/like/${likeId}`, {
             method: 'PUT'
         })
         .then(data => data.json())
         .then((response) => {
-            console.log(response)
             if (response.success === true) {
-                console.log('hello')
+                //confirm like with message pop up
             }
         })
     }
 
     const handleClick = () => {
-        likeRecord(likeId)
+        likeRecord()
     }
 
     return (
         <>
-            <button 
-                onClick={handleClick} 
-                id={likeId} className='m-1 like'>Like</button>
+            <button onClick={handleClick} id={likeId} className='m-1 like'>Like</button>
         </>
     )
 }
