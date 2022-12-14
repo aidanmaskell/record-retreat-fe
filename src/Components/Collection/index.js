@@ -1,3 +1,4 @@
+import './styles.scss'
 import { useState } from "react"
 import NoRecords from "../NoRecords"
 import RecordPlayer from "../RecordPlayer"
@@ -7,6 +8,10 @@ const Collection = ({ records }) => {
 
     const [recordId, setRecordId] = useState(false)
     const [recordPlaying, setRecordPlaying] = useState(null)
+
+    const displayLikedRecordMsg = () => {
+
+    }
 
     const displayRecordPreviews = (records) => {
         if(records && records.length > 0) {
@@ -27,6 +32,10 @@ const Collection = ({ records }) => {
 
     return (
         <>
+        {/* <div className="likedRecordMsg d-flex align-items-center justify-content-center flex-column">
+            <button>X</button>
+            <h2 className='text-center align-middle'>Record successfully liked!</h2>
+        </div> */}
         <div className="row d-flex justify-content-center">
             {displayRecordPreviews(records)}
         </div>

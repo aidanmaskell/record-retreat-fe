@@ -1,0 +1,15 @@
+@import '../../index.scss';
+
+.likedRecordMsg {
+    width: 30%;
+    height: 15%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: $successColor;
+    font-family: $textFont;
+    border-radius: 5px;
+    h2 {
+        font-size: 1.5rem;
+    }
+}
