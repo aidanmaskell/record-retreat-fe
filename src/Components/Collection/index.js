@@ -1,17 +1,16 @@
-import './styles.scss'
 import { useState } from "react"
 import NoRecords from "../NoRecords"
 import RecordPlayer from "../RecordPlayer"
 import RecordPreview from "../RecordPreview"
+import SuccessMsg from '../SuccessMsg'
 
 const Collection = ({ records }) => {
 
     const [recordId, setRecordId] = useState(false)
     const [recordPlaying, setRecordPlaying] = useState(null)
-
-    const displayLikedRecordMsg = () => {
-
-    }
+    const [successMsgDisplayed, setSuccessMsgdisplayed] = useState(false)
+    const [successMsgContent, setSuccessMsgContent] = useState(null)
+    
 
     const displayRecordPreviews = (records) => {
         if(records && records.length > 0) {
@@ -21,7 +20,9 @@ const Collection = ({ records }) => {
                             key={record._id} 
                             recordId={recordId}
                             setRecordId={setRecordId}
-                            setRecordPlaying={setRecordPlaying} />
+                            setRecordPlaying={setRecordPlaying}
+                            successMsgDisplayed={successMsgDisplayed}
+                            setSuccessMsgdisplayed={setSuccessMsgdisplayed} />
                     ))}
                 </>
             )
@@ -32,16 +33,15 @@ const Collection = ({ records }) => {
 
     return (
         <>
-        {/* <div className="likedRecordMsg d-flex align-items-center justify-content-center flex-column">
-            <button>X</button>
-            <h2 className='text-center align-middle'>Record successfully liked!</h2>
-        </div> */}
-        <div className="row d-flex justify-content-center">
-            {displayRecordPreviews(records)}
-        </div>
-            <RecordPlayer 
-                recordId={recordId}
-                recordPlaying={recordPlaying} />
+            <SuccessMsg 
+                successMsgContent={successMsgContent}
+                setSuccessMsgContent={setSuccessMsgContent}  />
+            <div className="row d-flex justify-content-center">
+                {displayRecordPreviews(records)}
+            </div>
+                <RecordPlayer 
+                    recordId={recordId}
+                    recordPlaying={recordPlaying} />
         </>
 
     )

@@ -2,7 +2,9 @@ import DislikeButton from '../DislikeButton'
 import LikeButton from '../LikeButton'
 import './styles.scss'
 
-const RecordPreview = ({ record, recordId, setRecordId, setRecordPlaying }) => {
+const RecordPreview = ({ 
+    record, recordId, setRecordId, setRecordPlaying, setSuccessMsgdisplayed 
+}) => {
 
     const getRecordById = (recordId) => {
         if(recordId) {
@@ -25,8 +27,12 @@ const RecordPreview = ({ record, recordId, setRecordId, setRecordPlaying }) => {
             <h4 className='text-center'>{record.title} - {record.year}</h4>
             <button onClick={handleClick} id={record._id} className='m-1 play'>PLAY</button>
             <div className='likeDislike'>
-                <LikeButton likeId={record._id} />
-                <DislikeButton dislikeId={record._id} />
+                <LikeButton 
+                    likeId={record._id}
+                    setSuccessMsgdisplayed={setSuccessMsgdisplayed} />
+                <DislikeButton 
+                    dislikeId={record._id}
+                    setSuccessMsgdisplayed={setSuccessMsgdisplayed} />
             </div>
         </div>)
     }
